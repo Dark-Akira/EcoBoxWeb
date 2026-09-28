@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoBox - Hướng dẫn sử dụng</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4faf6;
+            color: #173b2a;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: linear-gradient(135deg, #075d32, #20a866);
+            color: white;
+            padding: 25px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d7ff70;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d7ff70;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hero-text h1 {
+            font-size: 58px;
+            color: #075d32;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #20a866;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 28px;
+            background: #16854d;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: #0c663a;
+        }
+
+        .hero-box {
+            width: 330px;
+            height: 330px;
+            background: linear-gradient(145deg, #ffffff, #dff6e7);
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 50px rgba(20,120,70,0.2);
+        }
+
+        .box-icon {
+            font-size: 150px;
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #075d32;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #61796b;
+            font-size: 17px;
+        }
+
+        /* ================= GUIDE ================= */
+
+        .steps {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .step {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border-top: 5px solid #20a866;
+        }
+
+        .step:hover {
+            transform: translateY(-8px);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #16854d;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .step h3 {
+            color: #075d32;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .step p {
+            color: #61796b;
+            line-height: 1.7;
+        }
+
+        /* ================= QR ================= */
+
+        .qr-section {
+            background: #075d32;
+            color: white;
+        }
+
+        .qr-container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .qr-text {
+            flex: 1;
+        }
+
+        .qr-text h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .qr-text p {
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .qr-box {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            color: #173b2a;
+        }
+
+        .qr-box img {
+            width: 220px;
+            height: 220px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* ================= WARNING ================= */
+
+        .warning {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff8df;
+            border-left: 6px solid #e4b83c;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .warning h2 {
+            color: #8b6900;
+            margin-bottom: 20px;
+        }
+
+        .warning ul {
+            padding-left: 25px;
+        }
+
+        .warning li {
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+
+        /* ================= BENEFITS ================= */
+
+        .benefits {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .benefit {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .benefit-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .benefit h3 {
+            color: #075d32;
+            margin-bottom: 10px;
+        }
+
+        .benefit p {
+            color: #61796b;
+            line-height: 1.6;
+        }
+
+        /* ================= PROCESS ================= */
+
+        .process {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .process-item {
+            background: #e1f5e8;
+            padding: 15px 22px;
+            border-radius: 30px;
+            font-weight: bold;
+            color: #075d32;
+        }
+
+        .arrow {
+            font-size: 25px;
+            color: #16854d;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #063b21;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #b9d8c5;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 45px;
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .qr-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-box {
+                width: 260px;
+                height: 260px;
+            }
+
+            .box-icon {
+                font-size: 110px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            Eco<span>Box</span>
+        </div>
+
+        <ul>
+            <li><a href="#gioithieu">Giới thiệu</a></li>
+            <li><a href="#huongdan">Hướng dẫn</a></li>
+            <li><a href="#qr">QR EcoBox</a></li>
+            <li><a href="#luuy">Lưu ý</a></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero" id="gioithieu">
+
+    <div class="hero-text">
+
+        <h1>
+            Hướng dẫn sử dụng
+            <span>EcoBox</span>
+        </h1>
+
+        <p>
+            EcoBox là mô hình điểm thu gom bao bì thuốc bảo vệ thực vật
+            sau sử dụng, giúp người dân dễ dàng tìm kiếm và thực hiện
+            việc thu gom đúng cách.
+        </p>
+
+        <p>
+            Cùng EcoBox xây dựng môi trường nông nghiệp
+            <b>xanh hơn – sạch hơn – an toàn hơn.</b>
+        </p>
+
+        <a href="#huongdan" class="button">
+            Xem hướng dẫn →
+        </a>
+
+    </div>
+
+
+    <div class="hero-box">
+
+        <div class="box-icon">
+            ♻️
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HƯỚNG DẪN ================= -->
+
+<section id="huongdan">
+
+    <div class="section-title">
+
+        <h2>6 bước sử dụng EcoBox</h2>
+
+        <p>
+            Thực hiện theo các bước đơn giản dưới đây
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">1</div>
+
+            <h3>Sử dụng thuốc BVTV</h3>
+
+            <p>
+                Sử dụng thuốc bảo vệ thực vật theo đúng hướng dẫn
+                trên nhãn và các quy định an toàn.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">2</div>
+
+            <h3>Thu gom bao bì</h3>
+
+            <p>
+                Sau khi sử dụng, thu gom chai, lọ và bao bì thuốc
+                để đưa đến điểm thu gom.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">3</div>
+
+            <h3>Tìm EcoBox</h3>
+
+            <p>
+                Tìm EcoBox gần khu vực sản xuất hoặc khu dân cư
+                để thuận tiện mang bao bì đến.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">4</div>
+
+            <h3>Quét mã QR</h3>
+
+            <p>
+                Quét mã QR trên EcoBox để xem hướng dẫn,
+                thông tin và các điểm thu gom.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">5</div>
+
+            <h3>Bỏ đúng nơi</h3>
+
+            <p>
+                Đưa bao bì vào đúng vị trí hoặc cửa thu gom
+                được hướng dẫn trên EcoBox.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">6</div>
+
+            <h3>Thu gom định kỳ</h3>
+
+            <p>
+                Bao bì được kiểm tra, thu gom định kỳ và chuyển
+                đến nơi xử lý phù hợp.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QR ================= -->
+
+<section class="qr-section" id="qr">
+
+    <div class="qr-container">
+
+        <div class="qr-text">
+
+            <h2>📱 Quét mã QR EcoBox</h2>
+
+            <p>
+                Người dân có thể sử dụng điện thoại để quét mã QR
+                được đặt trên EcoBox.
+            </p>
+
+            <br>
+
+            <p>
+                Sau khi quét, người dùng có thể xem hướng dẫn sử dụng,
+                thông tin về EcoBox và các nội dung cần thiết.
+            </p>
+
+        </div>
+
+
+        <div class="qr-box">
+
+            <!--
+                THAY LINK BÊN DƯỚI BẰNG LINK WEBSITE THẬT CỦA BẠN
+            -->
+
+            <img
+                id="qrCode"
+                alt="Mã QR EcoBox"
+            >
+
+            <b>Quét để xem hướng dẫn</b>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LỢI ÍCH ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>EcoBox mang lại gì?</h2>
+
+        <p>
+            Một giải pháp đơn giản cho việc thu gom bao bì
+        </p>
+
+    </div>
+
+
+    <div class="benefits">
+
+        <div class="benefit">
+
+            <div class="benefit-icon">📍</div>
+
+            <h3>Dễ tiếp cận</h3>
+
+            <p>
+                Hướng đến việc bố trí điểm thu gom gần
+                khu vực sản xuất.
+            </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">📱</div>
+
+            <h3>Dễ sử dụng</h3>
+
+            <p>
+                QR giúp người dùng nhanh chóng xem
+                hướng dẫn cần thiết.
+            </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">♻️</div>
+
+            <h3>Thu gom đúng cách</h3>
+
+            <p>
+                Hỗ trợ hình thành quy trình thu gom
+                bao bì sau sử dụng.
+            </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">🌱</div>
+
+            <h3>Bảo vệ môi trường</h3>
+
+            <p>
+                Góp phần hạn chế tình trạng bao bì
+                bị bỏ rải rác ngoài môi trường.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUY TRÌNH ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Quy trình EcoBox</h2>
+
+        <p>
+            Từ sau khi sử dụng đến khi bao bì được thu gom
+        </p>
+
+    </div>
+
+
+    <div class="process">
+
+        <div class="process-item">
+            1️⃣ Sử dụng
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="process-item">
+            2️⃣ Thu gom
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="process-item">
+            3️⃣ Mang đến EcoBox
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="process-item">
+            4️⃣ Thu gom định kỳ
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="process-item">
+            5️⃣ Xử lý phù hợp
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LƯU Ý ================= -->
+
+<section id="luuy">
+
+    <div class="warning">
+
+        <h2>⚠️ Những điều cần lưu ý</h2>
+
+        <ul>
+
+            <li>
+                Không vứt bao bì thuốc bảo vệ thực vật
+                xuống kênh, mương hoặc nguồn nước.
+            </li>
+
+            <li>
+                Không bỏ chung với rác sinh hoạt thông thường
+                nếu điểm thu gom có yêu cầu phân loại riêng.
+            </li>
+
+            <li>
+                Đưa bao bì đến đúng EcoBox hoặc điểm thu gom
+                được hướng dẫn.
+            </li>
+
+            <li>
+                Thực hiện theo hướng dẫn được đặt tại EcoBox.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>🌱 EcoBox</h2>
+
+    <p>
+        Vì nông nghiệp xanh – Vì môi trường sạch
+    </p>
+
+    <br>
+
+    <p>
+        Giải pháp nhỏ, tác động lớn cho môi trường nông nghiệp.
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    /*
+        ĐÂY LÀ LINK MÀ QR SẼ DẪN TỚI.
+
+        Sau khi đưa website lên GitHub Pages,
+        hãy thay link này bằng link thật của bạn.
+
+        Ví dụ:
+
+        https://yhoangytb-arch.github.io/ecobox/
+    */
+
+    const websiteURL =
+        "https://yhoangytb-arch.github.io/ecobox/";
+
+    document.getElementById("qrCode").src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="
+        + encodeURIComponent(websiteURL);
+
+</script>
+
+</body>
+</html>
